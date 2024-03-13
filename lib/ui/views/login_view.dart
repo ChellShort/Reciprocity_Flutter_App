@@ -1,29 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:reciprocity/ui/views/Pagina1.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({Key? key}) : super(key: key);
   static String id = 'login_view';
 
-  // Credenciales de usuario (simuladas, podrían provenir de una base de datos local, por ejemplo)
   final Map<String, String> userCredentials = {
     'usuario1@example.com': 'contraseña1',
     'usuario2@example.com': 'contraseña2',
-    // Agrega más credenciales si es necesario
   };
 
-  // Método para manejar el inicio de sesión
   void _login(BuildContext context, String email, String password) {
-    // Verificar si las credenciales son válidas
     if (userCredentials.containsKey(email) && userCredentials[email] == password) {
-      // Si las credenciales son correctas, muestra un mensaje de éxito
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Inicio de sesión exitoso'),
           duration: Duration(seconds: 2),
         ),
       );
-      // Puedes navegar a la siguiente pantalla después del inicio de sesión exitoso
-      // Navigator.pushNamed(context, NextScreen.id);
+      Navigator.pushNamed(context, Pagina1.id);
     } else {
       // Si las credenciales son incorrectas, muestra un mensaje de error
       ScaffoldMessenger.of(context).showSnackBar(
