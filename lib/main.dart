@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'router/routes.dart';
 import 'ui/views/login_view.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +16,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-        useMaterial3: true,
+        primaryColor: Colors.blue, // Define el color primario
+        visualDensity: VisualDensity.adaptivePlatformDensity, // Define la densidad visual
+        fontFamily: 'Roboto', // Define la fuente por defecto
+        // Agrega más ajustes de tema aquí según sea necesario
       ),
       initialRoute: LoginView.id,
       routes: customRoutes,

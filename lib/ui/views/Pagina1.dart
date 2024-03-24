@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 
 class Pagina1 extends StatelessWidget {
@@ -19,19 +18,19 @@ class Pagina1 extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset('assets/images/ReciproCity.jpg'),
-                    SizedBox(height: 20),
-                    Text(
+                    const SizedBox(height: 20),
+                    const Text(
                       'Oferta de tiempo limitado',
                       style: TextStyle(fontSize: 18),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Image.asset('assets/images/oferta.jpg'),
                   ],
                 ),
               ),
             ],
           ),
-          Align(
+          const Align(
             alignment: Alignment.bottomCenter,
             child: FractionalTranslation(
               translation: Offset(0.0, -3.5),
