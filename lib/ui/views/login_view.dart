@@ -43,7 +43,7 @@ class LoginView extends StatelessWidget {
           children: [
 
             //texto
-              Icon(
+              const Icon(
                 Icons.person,
                 size: 100,
               ),
@@ -62,7 +62,7 @@ class LoginView extends StatelessWidget {
               Container(
                 width: size.width * 0.8,
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Colors.orange, // Color inicial del gradiente
                       Colors.red, // Color final del gradiente
@@ -100,7 +100,7 @@ class LoginView extends StatelessWidget {
 
                 width: size.width * 0.8,
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Colors.orange, // Color inicial del gradiente
                       Colors.red, // Color final del gradiente
@@ -140,7 +140,7 @@ class LoginView extends StatelessWidget {
               
                width: size.width * 0.5,
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Colors.orange, // Color inicial del gradiente
                       Colors.red, // Color final del gradiente
@@ -162,13 +162,6 @@ class LoginView extends StatelessWidget {
                   );
                 },
 
-                child: const Text(
-                  'Iniciar sesión',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 50,
@@ -179,13 +172,20 @@ class LoginView extends StatelessWidget {
                   ),
                   backgroundColor: Colors.transparent,
                 ),
+
+                child: const Text(
+                  'Iniciar sesión',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
               ),
 
 
             ),
 
            Container(
-              padding: EdgeInsets.symmetric(horizontal: 50), // Ajusta el espacio entre los bordes y el Row
+              padding: const EdgeInsets.symmetric(horizontal: 50), // Ajusta el espacio entre los bordes y el Row
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween, // Alinea los elementos a los extremos
                 children: [
@@ -238,7 +238,7 @@ class LoginView extends StatelessWidget {
               
                width: size.width * 0.5,
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     colors: [
                       Colors.orange, // Color inicial del gradiente
                       Colors.red, // Color final del gradiente
@@ -255,13 +255,6 @@ class LoginView extends StatelessWidget {
                 onPressed: () {
                 },
 
-                child: const Text(
-                  'Create an account',
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 10,
@@ -270,7 +263,14 @@ class LoginView extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
-                  backgroundColor: Colors.transparent,
+                  backgroundColor: const Color.fromARGB(0, 0, 0, 0),
+                ),
+
+                child: const Text(
+                  'Create an account',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ),
             )

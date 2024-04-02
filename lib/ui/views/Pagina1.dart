@@ -1,11 +1,24 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:reciprocity/ui/views/Inicio.dart';
+import 'package:reciprocity/ui/views/register_view.dart';
 
 class Pagina1 extends StatelessWidget {
-  const Pagina1({super.key});
+  const Pagina1({Key? key}) : super(key: key);
   static String id = 'register_view';
 
   @override
   Widget build(BuildContext context) {
+    // Método para redireccionar después de 10 segundos
+    void redirectToPage2() {
+      Future.delayed(const Duration(seconds: 10), () {
+        Navigator.pushReplacementNamed(context, Inicio.id);
+      });
+    }
+
+    // Llamar al método para iniciar el contador de tiempo
+    redirectToPage2();
+
     return Scaffold(
       body: Stack(
         alignment: Alignment.center,
