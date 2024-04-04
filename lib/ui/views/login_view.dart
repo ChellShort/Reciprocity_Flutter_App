@@ -6,8 +6,8 @@ class LoginView extends StatelessWidget {
   static String id = 'login_view';
 
   final Map<String, String> userCredentials = {
+    'ferfd64@outlook.com': 'minemine3',
     'usuario1@example.com': 'contraseña1',
-    'usuario2@example.com': 'contraseña2',
   };
 
   void _login(BuildContext context, String email, String password) {
@@ -76,6 +76,7 @@ class LoginView extends StatelessWidget {
                 ),
                 
                 child: TextField(
+                  style: TextStyle(color: Colors.white),
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: const InputDecoration(
@@ -115,7 +116,7 @@ class LoginView extends StatelessWidget {
 
 
                 child: TextField(
-                  
+                  style: TextStyle(color: Colors.white),
                   controller: passwordController,
                   obscureText: true,
                   decoration: const InputDecoration(
