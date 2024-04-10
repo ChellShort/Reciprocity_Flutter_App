@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:reciprocity/ui/views/Inicio.dart';
-import 'package:reciprocity/ui/views/register_view.dart';
 
 class Pagina1 extends StatelessWidget {
   const Pagina1({Key? key}) : super(key: key);

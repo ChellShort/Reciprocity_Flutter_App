@@ -42,10 +42,10 @@ class LoginView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
 
-            //texto
-              const Icon(
-                Icons.person,
-                size: 100,
+              Image.asset(
+                'assets/images/reciprocitylogo.png',
+                width: 100,
+                height: 100,
               ),
               
               const Text(
@@ -76,7 +76,7 @@ class LoginView extends StatelessWidget {
                 ),
                 
                 child: TextField(
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: const InputDecoration(
@@ -116,7 +116,7 @@ class LoginView extends StatelessWidget {
 
 
                 child: TextField(
-                  style: TextStyle(color: Colors.white),
+                  style: const TextStyle(color: Colors.white),
                   controller: passwordController,
                   obscureText: true,
                   decoration: const InputDecoration(

@@ -15,8 +15,8 @@ class Inicio extends StatelessWidget {
         appBar: AppBar(
         backgroundColor: Colors.transparent, // Establece el color de fondo como transparente
         flexibleSpace: Container(
-          decoration: BoxDecoration(
-                  gradient: const LinearGradient(
+          decoration: const BoxDecoration(
+                  gradient: LinearGradient(
                     colors: [
                       Colors.orange, // Color inicial del gradiente
                       Colors.red, // Color final del gradiente
@@ -41,7 +41,7 @@ class Inicio extends StatelessWidget {
             children: <Widget>[
 
               Container(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
                     colors: [
@@ -52,15 +52,15 @@ class Inicio extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 height: 150,
-                child: Center(
+                child: const Center(
                   child: Text('SECCIÓN 1', style: TextStyle(fontSize: 25 ,color: Colors.white),),
                 ),
               ),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               Container(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
                     colors: [
@@ -71,15 +71,15 @@ class Inicio extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 height: 150,
-                child: Center(
+                child: const Center(
                   child: Text('SECCIÓN 2', style: TextStyle(fontSize: 25 ,color: Colors.white),),
                 ),
               ),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               Container(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
                     colors: [
@@ -90,7 +90,7 @@ class Inicio extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10.0),
                 ),
                 height: 150,
-                child: Center(
+                child: const Center(
                   child: Text('SECCIÓN 3', style: TextStyle(fontSize: 25 ,color: Colors.white),),
                 ),
               ),
@@ -100,8 +100,8 @@ class Inicio extends StatelessWidget {
         ),
         ),
 
-        bottomNavigationBar: BottomAppBar(
-          child: Container(
+        bottomNavigationBar: const BottomAppBar(
+          child: SizedBox(
 
             height: 50.0,
             child: Center(

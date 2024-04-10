@@ -7,11 +7,14 @@ import '../ui/views/Pagina1.dart';
 
 import '../ui/views/Inicio.dart';
 
+import '../ui/views/LandingPage.dart';
+
 var customRoutes = <String, WidgetBuilder>{
   /// vistas de registro y login
   LoginView.id: (_) => LoginView(),
   RegisterView.id: (_) => const RegisterView(),
   Pagina1.id: (_) => const Pagina1(),
-  Inicio.id: (_) => Inicio()
+  Inicio.id: (_) => const Inicio(),
+  LandingPage.id: (_) => const LandingPage()
   ///
 };

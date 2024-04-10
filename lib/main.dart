@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:reciprocity/ui/views/LandingPage.dart';
+import 'package:reciprocity/ui/views/login_view.dart';
 import 'router/routes.dart';
-import 'ui/views/login_view.dart';
 
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Roboto', // Define la fuente por defecto
         // Agrega más ajustes de tema aquí según sea necesario
       ),
-      initialRoute: LoginView.id,
+      initialRoute: LandingPage.id,
       routes: customRoutes,
     );
   }
