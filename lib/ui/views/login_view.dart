@@ -14,7 +14,7 @@ class LoginView extends StatelessWidget {
     if (userCredentials.containsKey(email) && userCredentials[email] == password) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Inicio de sesión exitoso'),
+          content: Text('Successful login'),
           duration: Duration(seconds: 2),
         ),
       );
@@ -23,7 +23,7 @@ class LoginView extends StatelessWidget {
       // Si las credenciales son incorrectas, muestra un mensaje de error
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text('Credenciales incorrectas'),
+          content: Text('Incorrect credentials'),
           duration: Duration(seconds: 2),
         ),
       );
@@ -80,7 +80,7 @@ class LoginView extends StatelessWidget {
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: const InputDecoration(
-                    labelText: 'Correo electrónico',
+                    labelText: 'Email',
                     labelStyle: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w700,
@@ -120,7 +120,7 @@ class LoginView extends StatelessWidget {
                   controller: passwordController,
                   obscureText: true,
                   decoration: const InputDecoration(
-                    labelText: 'Contraseña',
+                    labelText: 'Password',
                     labelStyle: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w700,
@@ -175,7 +175,7 @@ class LoginView extends StatelessWidget {
                 ),
 
                 child: const Text(
-                  'Iniciar sesión',
+                  'Log In',
                   style: TextStyle(
                     color: Colors.white,
                   ),
@@ -200,7 +200,7 @@ class LoginView extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Recuérdame',
+                          'Remember me',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                           ),

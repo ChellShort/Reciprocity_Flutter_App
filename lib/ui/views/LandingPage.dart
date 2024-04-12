@@ -4,7 +4,7 @@ import 'package:reciprocity/ui/views/login_view.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({super.key});
-  static String id = 'register_view';
+  static String id = 'LandingPage';
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +14,18 @@ class LandingPage extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
         backgroundColor: Color.fromRGBO(255, 255, 255, 0.612), // Establece el color de fondo como transparente
-        leading: Image.asset(
-          'assets/images/reciprocitylogo.png',
-          height: 40, // Ajusta la altura según sea necesario
-        ),
         actions: [
+          IconButton(onPressed: (){}, icon: Image.asset(
+            'assets/images/logoconleyenda.png',
+            height: 300, 
+            width: 300, 
+          ),
+          ),
           IconButton(
             onPressed: () {
-              
             },
             icon: Icon(Icons.menu),
+            iconSize: 50,
           ),
         ],
       ),

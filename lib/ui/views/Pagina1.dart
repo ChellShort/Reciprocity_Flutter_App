@@ -29,7 +29,7 @@ class Pagina1 extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Image.asset('assets/images/ReciproCity.jpg'),
+                    Image.asset('assets/images/logoconleyenda.png'),
                     const SizedBox(height: 20),
                     const Text(
                       'Oferta de tiempo limitado',
