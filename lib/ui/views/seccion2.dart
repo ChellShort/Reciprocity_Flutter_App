@@ -38,7 +38,23 @@ class seccion2 extends StatelessWidget {
         ),
 
         body: Center(
-          
+          child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(20.0), // Agregamos un margen de 20 en todos los lados
+              child: Text(
+                'OBJETIVO\nFacilitar a los estudiantes ‘STEM’ de UPQ la práctica y desenvolvimiento en el idioma inglés de manera accesible y efectiva. Promoviendo la comunicación y el aprendizaje colaborativo.',
+                style: TextStyle(fontSize: 20),
+                textAlign: TextAlign.center, // Centramos el texto
+              ),
+            ),
+            Image.asset(
+              'assets/images/objetivo.png', // Ruta de la imagen que quieres mostrar
+              height: 200, // Ajusta el tamaño de la imagen según sea necesario
+            ),
+          ],
+        ),
         ),
         bottomNavigationBar: const BottomAppBar(
           child: SizedBox(

@@ -38,7 +38,17 @@ class seccion1 extends StatelessWidget {
         ),
 
         body: Center(
-          
+          child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              child: Image.asset(
+                'assets/images/temas.png', // Ruta de la imagen que quieres mostrar
+                fit: BoxFit.contain, // Para ajustar la imagen al tamaño del espacio disponible
+              ),
+            ),
+          ],
+        ),
         ),
         bottomNavigationBar: const BottomAppBar(
           child: SizedBox(

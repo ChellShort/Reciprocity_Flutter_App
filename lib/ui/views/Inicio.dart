@@ -97,42 +97,13 @@ class Inicio extends StatelessWidget {
                   height: 150,
                   child: const Center(
                     child: Text(
-                      'SOBRE NOSOTROS',
+                      'OBJETIVO RECIPROCITY',
                       style: TextStyle(fontSize: 25, color: Colors.white),
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => seccion3(),
-                    ),
-                  );
-                },
-                child: Container(
-                  padding: const EdgeInsets.all(10.0),
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [
-                        Colors.orange,
-                        Colors.red,
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  height: 150,
-                  child: const Center(
-                    child: Text(
-                      'METAS A FUTURO',
-                      style: TextStyle(fontSize: 25, color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
+              
             ],
           ),
         ),
