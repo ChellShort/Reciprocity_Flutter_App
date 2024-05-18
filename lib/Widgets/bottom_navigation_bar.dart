@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:reciprocity/views/contact_us.dart';
+import 'package:reciprocity/views/how_to_use_it.dart';
+import 'package:reciprocity/views/privacy_and_terms.dart';
 
 class BottomNavigationCustom extends StatelessWidget {
   const BottomNavigationCustom({super.key});
@@ -6,28 +10,50 @@ class BottomNavigationCustom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-  mainAxisSize: MainAxisSize.min,
-  children: <Widget>[
-    BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person),
-          label: 'Contact us',
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ContactUs(),
+                    ),
+                  );
+                },
+                child: const Text('Contact us')),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PrivacyAndTerms(),
+                    ),
+                  );
+                },
+                child: const Text('Privacy and Terms')),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HowToUse(),
+                    ),
+                  );
+                },
+                child: const Text('How to use it?'))
+            ],
+          ),
         ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.privacy_tip),
-          label: 'Privacy and Terms',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.fiber_manual_record),
-          label: 'How to use it?',
-        ),
-      ],
-    ),
-    const Padding(
-      padding: EdgeInsets.all(8.0),
-      child: Text(
-        'All rights reserved 2023 Reciprocity S.A',
+        const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Text(
+            'All rights reserved 2023 Reciprocity S.A',
           ),
         ),
       ],
