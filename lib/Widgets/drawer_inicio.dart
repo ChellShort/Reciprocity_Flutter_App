@@ -4,18 +4,19 @@
 //El drawer depende de una clase llamada drawer_items, asi que no la borres y no se te olvide importarla
 
 import 'package:flutter/material.dart';
+import 'package:reciprocity/Widgets/drawer.dart';
 import 'package:reciprocity/Widgets/drawer_header.dart';
 import 'package:reciprocity/utils/drawer_items.dart';
 import 'package:reciprocity/views/how_to_use_it.dart';
 
-class DrawerCustom extends StatelessWidget {
+class DrawerCustomInicio extends StatelessWidget {
   final void Function(int) cIndex; //Funcion que se encarga de cambiar el index del drawer
-  const DrawerCustom({super.key, required this.cIndex}); //Se pone required porque es un parametro obligatorio
+  const DrawerCustomInicio({super.key, required this.cIndex}); //Se pone required porque es un parametro obligatorio
 
   @override
   Widget build(BuildContext context) {
 
-    List<Items> itemsList = DrawerItems().items;
+    List<Items> itemsList = DrawerItemsInicio().items;
 
     return Drawer(
       child: ListView(
@@ -45,6 +46,17 @@ class DrawerCustom extends StatelessWidget {
                   );
                 }
               ),
+              ListTile(
+                leading: const Icon(Icons.exit_to_app),
+                title: const Text('Exit'),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                subtitle: const Text('Return to the welcome menu'),
+                onTap: () {
+                  for (int i = 0; i < 3; i++) {
+                    Navigator.pop(context);
+                  }
+                },
+              )
               
               
             ],
@@ -54,17 +66,4 @@ class DrawerCustom extends StatelessWidget {
       ),
     );
   }
-}
-
-class Items{
-  String title ;
-  IconData icon;
-  String subtitle;
-
-
-  Items({
-    required this.title, 
-    required this.icon, 
-    required this.subtitle
-    });
 }

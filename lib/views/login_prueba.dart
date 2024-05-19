@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:reciprocity/Widgets/app_bar.dart';
-import 'package:reciprocity/views/home.dart';
 import 'package:reciprocity/views/forgot_password.dart';
-import 'package:reciprocity/views/landing_page.dart';
+import 'package:reciprocity/views/home.dart';
 import 'package:reciprocity/views/register.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class LoginP extends StatefulWidget {
+  const LoginP({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<LoginP> createState() => _LoginPState();
 }
 
 bool isChecked = false;
 
-class _LoginState extends State<Login> {
+class _LoginPState extends State<LoginP> {
+
 
 
   final TextEditingController _emailController = TextEditingController();
@@ -56,11 +55,10 @@ class _LoginState extends State<Login> {
   }
 
 
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const AppBarCustom(),
-      body: Column(
+    return Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           const Text(
@@ -153,7 +151,6 @@ class _LoginState extends State<Login> {
             ],
           ),
         ],
-      ),
-    );
+      );
   }
 }

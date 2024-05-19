@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:reciprocity/pruebas/padre_hijo.dart';
 import 'package:reciprocity/views/landing_page.dart';
 
 void main() => runApp(const MyApp());
