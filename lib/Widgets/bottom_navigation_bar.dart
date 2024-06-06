@@ -53,7 +53,7 @@ class BottomNavigationCustom extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.all(8.0),
           child: Text(
-            'All rights reserved 2023 Reciprocity S.A',
+            'All rights reserved 2023 TLTI S.A',
           ),
         ),
       ],
