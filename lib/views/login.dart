@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:reciprocity/Widgets/app_bar.dart';
 import 'package:reciprocity/views/home.dart';
 import 'package:reciprocity/views/forgot_password.dart';
-import 'package:reciprocity/views/landing_page.dart';
 import 'package:reciprocity/views/register.dart';
 
 class Login extends StatefulWidget {

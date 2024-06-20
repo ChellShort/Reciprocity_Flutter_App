@@ -1,0 +1,32 @@
+Ricardo Emmanuel Sánchez Martínez
+19/06/2024
+04:24 pm (Hora de la capital ciudad de méxico)
+Universidad Politecnica de Queretaro
+
+Hola, solo hago esto para constatar que se cambio una propiedad fundamental de "Reciprocity_App_Web\android\app\build.gradle" en la linea 48, de este estado:
+
+defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.example.reciprocity"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
+        minSdkVersion flutter.minSdkVersion
+        targetSdkVersion flutter.targetSdkVersion
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+
+A este otro estado:
+
+defaultConfig {
+        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+        applicationId "com.example.reciprocity"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
+        minSdkVersion 23
+        targetSdkVersion flutter.targetSdkVersion
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+
+Estos cambios se realizaron para hacer la conexión con Firebase posible

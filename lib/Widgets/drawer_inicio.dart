@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:reciprocity/Widgets/drawer.dart';
 import 'package:reciprocity/Widgets/drawer_header.dart';
 import 'package:reciprocity/utils/drawer_items.dart';
-import 'package:reciprocity/views/how_to_use_it.dart';
 
 class DrawerCustomInicio extends StatelessWidget {
   final void Function(int) cIndex; //Funcion que se encarga de cambiar el index del drawer

@@ -1,17 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:reciprocity/Widgets/app_bar.dart';
 import 'package:reciprocity/Widgets/bottom_navigation_bar.dart';
-import 'package:reciprocity/Widgets/drawer.dart';
 import 'package:reciprocity/Widgets/drawer_inicio.dart';
-import 'package:reciprocity/Widgets/statistics.dart';
-import 'package:reciprocity/Widgets/welcome.dart';
-import 'package:reciprocity/Widgets/welcome_section.dart';
-import 'package:reciprocity/views/faq.dart';
-import 'package:reciprocity/views/guidelines.dart';
-import 'package:reciprocity/views/login.dart';
-import 'package:reciprocity/views/posts.dart';
 import 'package:reciprocity/views/themes.dart';
-import 'package:reciprocity/views/what_is_new.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
