@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:reciprocity/Widgets/app_bar.dart';
+import 'package:reciprocity/Widgets/app_bar_inicio.dart';
 import 'package:reciprocity/Widgets/bottom_navigation_bar.dart';
 import 'package:reciprocity/Widgets/drawer_inicio.dart';
 import 'package:reciprocity/views/themes.dart';
@@ -29,11 +29,11 @@ class _HomeState extends State<Home> {
             index = i; //Se asigna el valor de n elemento del drawer, para así redibujar el body
           });
         },
+        username: widget.username,
       ),
-      appBar: const AppBarCustom(),
+      appBar: const AppBarCustomInicio(),
       body: ListView(
         children: [
-          Text(widget.username),
           myBody[index],
         ],
       ),

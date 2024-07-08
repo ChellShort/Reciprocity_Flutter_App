@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:reciprocity/Widgets/app_bar.dart';
 import 'package:reciprocity/views/home.dart';
 import 'package:reciprocity/views/forgot_password.dart';
 import 'package:reciprocity/views/register.dart';
-import 'package:reciprocity/utils/login_authentication.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -21,55 +22,48 @@ class _LoginState extends State<Login> {
   final TextEditingController _passwordController = TextEditingController();
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  void _login() async {
-    if (_formKey.currentState!.validate()) {
-      String email = _emailController.text;
-      String password = _passwordController.text;
+  Future<void> _signin(String email, String password) async {
+    try {
+      await _auth.signInWithEmailAndPassword(email: email, password: password);
 
-      try {
-        UserCredential userCredential = await _auth.signInWithEmailAndPassword(
-          email: email,
-          password: password,
-        );
-        // Mostrar mensaje de éxito
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            backgroundColor: Colors.white,
-            content: Text(
-              style: TextStyle(color: Colors.black),
-              'Login Successful',
+      QuerySnapshot querySnapshot = await _firestore
+          .collection('users')
+          .where('email', isEqualTo: email)
+          .get();
+
+      if (querySnapshot.docs.isNotEmpty) {
+        var userDocument =
+            querySnapshot.docs.first.data() as Map<String, dynamic>;
+        String? username = userDocument['username'];
+
+        if (username != null) {
+          Fluttertoast.showToast(
+              msg: 'Login Sucessfull!\nWelcome $username',
+              gravity: ToastGravity.BOTTOM);
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Home(
+                username: username,
+              ),
             ),
-          ),
-        );
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => Home(username: email,),
-          ),
-        );
-      } on FirebaseAuthException catch (e) {
-        String message;
-        if (e.code == 'user-not-found') {
-          message = 'No user found for that email.';
-        } else if (e.code == 'wrong-password') {
-          message = 'Wrong password provided.';
-        } else {
-          message = 'Login failed. Please try again.';
+          );
         }
-        // Mostrar mensaje de error
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            backgroundColor: Colors.white,
-            content: Text(
-              style: TextStyle(color: Colors.black),
-              message,
-            ),
-          ),
-        );
       }
-    } else {
+    } on FirebaseAuthException catch (error) {
+      String e = error.toString();
 
+      switch (e) {
+        case '[firebase_auth/invalid-credential] The supplied auth credential is incorrect, malformed or has expired.':
+          e = 'Credentials not registered. Please register first.';
+          break;
+        default:
+          print('Error papu: $e');
+          break;
+      }
+      Fluttertoast.showToast(msg: e, gravity: ToastGravity.BOTTOM);
     }
   }
 
@@ -100,9 +94,12 @@ class _LoginState extends State<Login> {
                       border: OutlineInputBorder(),
                       labelText: 'Email',
                     ),
+                    keyboardType: TextInputType.emailAddress,
                     validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter your email';
+                      if (value == null ||
+                          value.isEmpty ||
+                          !value.contains('@')) {
+                        return 'Please enter an email';
                       }
                       return null;
                     },
@@ -119,6 +116,8 @@ class _LoginState extends State<Login> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter your password';
+                      } else if (value.length < 8) {
+                        return 'Password must be at least 8 characters long';
                       }
                       return null;
                     },
@@ -156,7 +155,12 @@ class _LoginState extends State<Login> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
-                      onPressed: _login,
+                      onPressed: () {
+                        if (_formKey.currentState!.validate()) {
+                          _signin(
+                              _emailController.text, _passwordController.text);
+                        }
+                      },
                       child: const Text('Log In'),
                     ),
                   ),

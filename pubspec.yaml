@@ -11,8 +11,10 @@ dependencies:
   flutter:
     sdk: flutter
   material_design_icons_flutter: ^5.0.5955
-  cloud_firestore:
+  cloud_firestore: ^5.0.2
   firebase_core: ^3.1.0
+  fluttertoast: ^8.2.6
+  shared_preferences: ^2.2.3
 
 dev_dependencies:
   change_app_package_name: ^1.2.0
