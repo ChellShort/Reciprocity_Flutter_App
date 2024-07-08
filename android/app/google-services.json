@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "679512063450",
+    "project_id": "tlti-2024",
+    "storage_bucket": "tlti-2024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679512063450:android:9267197090c376df5c14e3",
+        "android_client_info": {
+          "package_name": "com.example.tlti"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-0KHF7c0gEheDSJoIeE-xlRa7VYF9ltY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

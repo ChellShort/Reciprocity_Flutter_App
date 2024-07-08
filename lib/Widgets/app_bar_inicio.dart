@@ -6,11 +6,13 @@ class AppBarCustomInicio extends StatelessWidget implements PreferredSizeWidget 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      automaticallyImplyLeading: false,
       centerTitle: true,
-      title: const Image(
-          height: 50, image: AssetImage('assets/images/logoconleyenda.png')),
-    );
+      title: 
+          const Image(
+              height: 50, 
+              image: AssetImage('assets/images/logoconleyenda.png')
+            ),
+      );
   }
 
   @override

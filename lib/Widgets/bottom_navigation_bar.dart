@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:reciprocity/views/contact_us.dart';
 import 'package:reciprocity/views/how_to_use_it.dart';
 import 'package:reciprocity/views/privacy_and_terms.dart';
@@ -13,7 +12,7 @@ class BottomNavigationCustom extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Padding(
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
