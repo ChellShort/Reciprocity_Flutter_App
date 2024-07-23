@@ -61,6 +61,7 @@ class _RegisterState extends State<Register> {
         await _firestore.collection('users').doc(userCredential.user!.uid).set({
           'email': email,
           'username': username,
+          'level': 'unknown'
         });
 
         // Mostrar mensaje de éxito

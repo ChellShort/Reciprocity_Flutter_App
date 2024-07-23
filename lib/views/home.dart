@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:reciprocity/Widgets/app_bar_inicio.dart';
 import 'package:reciprocity/Widgets/bottom_navigation_bar.dart';
 import 'package:reciprocity/Widgets/drawer_inicio.dart';
-import 'package:reciprocity/views/themes.dart';
+import 'package:reciprocity/views/tests.dart';
+import 'package:reciprocity/views/video_meetings.dart';
 
 class Home extends StatefulWidget {
   final String username;
@@ -18,8 +19,9 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> myBody = const [
-      Themes(),
+    List<Widget> myBody = [
+      Tests(highestScore: 0,),
+      const VideoMeetings(),
     ];
 
     return Scaffold(
