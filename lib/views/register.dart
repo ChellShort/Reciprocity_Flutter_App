@@ -29,6 +29,71 @@ class _RegisterState extends State<Register> {
     return result.docs.isNotEmpty;
   }
 
+  Future<void> _showLevelDialog(String userId) async {
+    String? selectedLevel = await showDialog<String>(
+      context: context,
+      builder: (BuildContext context) {
+        return SimpleDialog(
+          title: const Text('Seleccione su nivel de inglés'),
+          children: <Widget>[
+            SimpleDialogOption(
+              onPressed: () {
+                Navigator.pop(context, 'A1');
+              },
+              child: const Text('A1'),
+            ),
+            SimpleDialogOption(
+              onPressed: () {
+                Navigator.pop(context, 'A2');
+              },
+              child: const Text('A2'),
+            ),
+            SimpleDialogOption(
+              onPressed: () {
+                Navigator.pop(context, 'B1');
+              },
+              child: const Text('B1'),
+            ),
+            SimpleDialogOption(
+              onPressed: () {
+                Navigator.pop(context, 'B2');
+              },
+              child: const Text('B2'),
+            ),
+            SimpleDialogOption(
+              onPressed: () {
+                Navigator.pop(context, 'C1');
+              },
+              child: const Text('C1'),
+            ),
+            SimpleDialogOption(
+              onPressed: () {
+                Navigator.pop(context, 'C2');
+              },
+              child: const Text('C2'),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (selectedLevel != null) {
+      await _firestore.collection('users').doc(userId).update({
+        'level': selectedLevel,
+      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          backgroundColor: Colors.white,
+          content: Text(
+            style: const TextStyle(color: Colors.black),
+            'Nivel de inglés guardado como: $selectedLevel',
+          ),
+        ),
+      );
+    }
+  }
+
   _register() async {
     if (_formKey.currentState!.validate()) {
       String email = _emailController.text.trim();
@@ -61,6 +126,7 @@ class _RegisterState extends State<Register> {
         await _firestore.collection('users').doc(userCredential.user!.uid).set({
           'email': email,
           'username': username,
+          'level': 'unknown'
         });
 
         // Mostrar mensaje de éxito
@@ -73,6 +139,9 @@ class _RegisterState extends State<Register> {
             ),
           ),
         );
+
+        // Mostrar cuadro de diálogo para seleccionar nivel de inglés
+        await _showLevelDialog(userCredential.user!.uid);
 
         Navigator.pop(context);
       } on PlatformException catch (error) {

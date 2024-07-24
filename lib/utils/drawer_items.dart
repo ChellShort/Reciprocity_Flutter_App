@@ -31,9 +31,13 @@ class DrawerItemsInicio{
 
   final List<Items> items = [ //Lista de elementos del drawer de inicio
       Items(
-        title: 'Themes', 
-        icon: Icons.home, 
-        subtitle: 'Choose where will you enter')
+        title: 'Tests', 
+        icon: Icons.assignment, 
+        subtitle: 'Choose any available exam'),
+      Items(
+        title: 'Video Meetings', 
+        icon: Icons.video_call, 
+        subtitle: 'Choose what you will talk about')
     ];
 }
 

@@ -44,13 +44,14 @@ class _LoginState extends State<Login> {
         var userDocument =
             querySnapshot.docs.first.data() as Map<String, dynamic>;
         String? username = userDocument['username'];
+        String? level = userDocument['level'];
 
         if (username != null) {
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(
               builder: (context) => Home(
-                username: username,
+                username: username, level: level,
               ),
             ),
           );
@@ -72,6 +73,7 @@ class _LoginState extends State<Login> {
         var userDocument =
             querySnapshot.docs.first.data() as Map<String, dynamic>;
         String? username = userDocument['username'];
+        String? level = userDocument['level'];
 
         if (username != null) {
           Fluttertoast.showToast(
@@ -86,7 +88,7 @@ class _LoginState extends State<Login> {
             context,
             MaterialPageRoute(
               builder: (context) => Home(
-                username: username,
+                username: username, level: level,
               ),
             ),
           );
