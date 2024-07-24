@@ -13,10 +13,12 @@ class DrawerCustomInicio extends StatelessWidget {
   final void Function(int)
       cIndex; //Funcion que se encarga de cambiar el index del drawer
   final String? username;
+  final String? level;
   const DrawerCustomInicio(
       {super.key,
       required this.cIndex,
-      required this.username}); //Se pone required porque es un parametro obligatorio
+      required this.username,
+      required this.level}); //Se pone required porque es un parametro obligatorio
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +35,11 @@ class DrawerCustomInicio extends StatelessWidget {
 
             children: <Widget>[
               DrawerHeaderCustom(
-                username: username ?? 'usuario',
+                username: username ?? 'user',
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Center(child: Text('Current Level: $level', style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)),
               ),
               ListView.builder(
                   physics:

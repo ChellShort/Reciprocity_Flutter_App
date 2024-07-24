@@ -3,12 +3,13 @@ import 'package:reciprocity/Widgets/app_bar_inicio.dart';
 import 'package:reciprocity/Widgets/bottom_navigation_bar.dart';
 import 'package:reciprocity/Widgets/drawer_inicio.dart';
 import 'package:reciprocity/views/tests.dart';
+import 'package:reciprocity/views/test_selector.dart';
 import 'package:reciprocity/views/video_meetings.dart';
 
 class Home extends StatefulWidget {
   final String username;
-
-  const Home({Key? key, required this.username}) : super(key: key);
+  final String? level;
+  const Home({Key? key, required this.username, required this.level}) : super(key: key);
 
   @override
   State<Home> createState() => _HomeState();
@@ -20,7 +21,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     List<Widget> myBody = [
-      Tests(highestScore: 0,),
+      const TestSelector(),
       const VideoMeetings(),
     ];
 
@@ -32,6 +33,7 @@ class _HomeState extends State<Home> {
           });
         },
         username: widget.username,
+        level: widget.level,
       ),
       appBar: const AppBarCustomInicio(),
       body: ListView(
