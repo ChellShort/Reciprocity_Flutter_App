@@ -80,6 +80,8 @@ class _ExamViewState extends State<ExamView> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  if (question['image'] != null && question['image'].isNotEmpty)
+                    Image.network(question['image']),
                   Text(
                     question['question'],
                     style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
