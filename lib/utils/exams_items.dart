@@ -3,6 +3,7 @@ final List<Map<String, dynamic>> questionsgeneralknowledge = [
     'question': 'What is the capital of France?',
     'options': ['Paris', 'London', 'Rome', 'Berlin'],
     'answer': 'Paris',
+    'image': 'https://drive.google.com/uc?export=view&id=1Bqq535bRt3oZiGoJLWrdfykG2PgqtcVM'
   },
   {
     'question': 'What is 2 + 2?',
