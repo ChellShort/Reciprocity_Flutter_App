@@ -32,6 +32,7 @@ class LoginMethods {
         var userDocument =
             querySnapshot.docs.first.data() as Map<String, dynamic>;
         String? username = userDocument['username'];
+        String level = userDocument['level'];
 
         if (username != null) {
           Fluttertoast.showToast(
@@ -47,6 +48,7 @@ class LoginMethods {
             MaterialPageRoute(
               builder: (context) => Home(
                 username: username,
+                level: level,
               ),
             ),
           );
