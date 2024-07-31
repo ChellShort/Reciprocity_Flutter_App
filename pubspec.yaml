@@ -16,6 +16,7 @@ dependencies:
   fluttertoast: ^8.2.6
   shared_preferences: ^2.2.3
   jitsi_meet_flutter_sdk: ^0.4.2
+  google_fonts: ^6.2.1
 
 dev_dependencies:
   change_app_package_name: ^1.2.0

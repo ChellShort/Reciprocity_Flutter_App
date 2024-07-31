@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:jitsi_meet_flutter_sdk/jitsi_meet_flutter_sdk.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const JitsiTrial());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+class JitsiTrial extends StatefulWidget {
+  const JitsiTrial({super.key});
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<JitsiTrial> createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<JitsiTrial> {
   bool audioMuted = true;
   bool videoMuted = true;
   bool screenShareOn = false;
