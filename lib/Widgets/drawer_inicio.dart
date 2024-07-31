@@ -7,6 +7,7 @@ import 'package:reciprocity/Widgets/drawer.dart';
 import 'package:reciprocity/Widgets/drawer_header.dart';
 import 'package:reciprocity/utils/drawer_items.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:reciprocity/views/landing_page.dart';
 import 'package:reciprocity/views/login.dart';
 
 class DrawerCustomInicio extends StatelessWidget {
@@ -71,7 +72,7 @@ class DrawerCustomInicio extends StatelessWidget {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const Login(),
+                        builder: (context) => const LandingPage(),
                       ),
                     );
                   } catch (e) {

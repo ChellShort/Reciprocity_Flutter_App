@@ -24,6 +24,8 @@ class _LoginState extends State<Login> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   bool isChecked = false;
+  bool isLoginButtonPressed = false;
+  bool isLoading = false;
 
   @override
   void initState() {
@@ -51,16 +53,21 @@ class _LoginState extends State<Login> {
             context,
             MaterialPageRoute(
               builder: (context) => Home(
-                username: username, level: level,
+                username: username,
+                level: level,
               ),
             ),
           );
         }
       }
     }
-  } //revisa si el usuario esta logeado dentro de la app o no
+  }
 
   Future<void> _signin(String email, String password) async {
+    setState(() {
+      isLoading = true;
+    });
+
     try {
       await auth.signInWithEmailAndPassword(email: email, password: password);
 
@@ -79,7 +86,7 @@ class _LoginState extends State<Login> {
           Fluttertoast.showToast(
               msg: 'Login Successful!\nWelcome $username',
               gravity: ToastGravity.BOTTOM);
-          if (isChecked) {
+          if (isChecked == true) {
             _saveUserEmailPassword();
           } else {
             _clearUserEmailPassword();
@@ -88,7 +95,8 @@ class _LoginState extends State<Login> {
             context,
             MaterialPageRoute(
               builder: (context) => Home(
-                username: username, level: level,
+                username: username,
+                level: level,
               ),
             ),
           );
@@ -109,6 +117,10 @@ class _LoginState extends State<Login> {
           break;
       }
       Fluttertoast.showToast(msg: e, gravity: ToastGravity.BOTTOM);
+    } finally {
+      setState(() {
+        isLoading = false; // Ocultar la barra de progreso
+      });
     }
   }
 
@@ -118,6 +130,13 @@ class _LoginState extends State<Login> {
       _emailController.text = prefs.getString('email') ?? '';
       _passwordController.text = prefs.getString('password') ?? '';
       isChecked = prefs.getBool('remember_me') ?? false;
+
+      // Iniciar sesión automáticamente si isChecked es verdadero
+      if (isChecked &&
+          _emailController.text.isNotEmpty &&
+          _passwordController.text.isNotEmpty && isLoginButtonPressed) {
+        _signin(_emailController.text, _passwordController.text);
+      }
     });
   }
 
@@ -225,6 +244,10 @@ class _LoginState extends State<Login> {
                     child: ElevatedButton(
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
+                          setState(() {
+                            isLoginButtonPressed = true;
+                            isLoading = true;
+                          });
                           _signin(
                               _emailController.text, _passwordController.text);
                         }
@@ -232,6 +255,11 @@ class _LoginState extends State<Login> {
                       child: const Text('Log In'),
                     ),
                   ),
+                  if (isLoading)
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: CircularProgressIndicator(),
+                    ),
                 ],
               ),
             ),

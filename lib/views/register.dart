@@ -21,6 +21,8 @@ class _RegisterState extends State<Register> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
+  bool isLoading = false;
+
   Future<bool> _emailExists(String email) async {
     final result = await _firestore
         .collection('users')
@@ -33,46 +35,51 @@ class _RegisterState extends State<Register> {
     String? selectedLevel = await showDialog<String>(
       context: context,
       builder: (BuildContext context) {
-        return SimpleDialog(
-          title: const Text('Seleccione su nivel de inglés'),
-          children: <Widget>[
-            SimpleDialogOption(
-              onPressed: () {
-                Navigator.pop(context, 'A1');
-              },
-              child: const Text('A1'),
-            ),
-            SimpleDialogOption(
-              onPressed: () {
-                Navigator.pop(context, 'A2');
-              },
-              child: const Text('A2'),
-            ),
-            SimpleDialogOption(
-              onPressed: () {
-                Navigator.pop(context, 'B1');
-              },
-              child: const Text('B1'),
-            ),
-            SimpleDialogOption(
-              onPressed: () {
-                Navigator.pop(context, 'B2');
-              },
-              child: const Text('B2'),
-            ),
-            SimpleDialogOption(
-              onPressed: () {
-                Navigator.pop(context, 'C1');
-              },
-              child: const Text('C1'),
-            ),
-            SimpleDialogOption(
-              onPressed: () {
-                Navigator.pop(context, 'C2');
-              },
-              child: const Text('C2'),
-            ),
-          ],
+        return PopScope(
+          canPop: false,
+          child: SimpleDialog(
+            
+            contentPadding: EdgeInsets.all(8.0),
+            title: const Text('Seleccione su nivel de inglés'),
+            children: <Widget>[
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.pop(context, 'A1');
+                },
+                child: const Text('A1'),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.pop(context, 'A2');
+                },
+                child: const Text('A2'),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.pop(context, 'B1');
+                },
+                child: const Text('B1'),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.pop(context, 'B2');
+                },
+                child: const Text('B2'),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.pop(context, 'C1');
+                },
+                child: const Text('C1'),
+              ),
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.pop(context, 'C2');
+                },
+                child: const Text('C2'),
+              ),
+            ],
+          ),
         );
       },
     );
@@ -95,6 +102,9 @@ class _RegisterState extends State<Register> {
   }
 
   _register() async {
+    setState(() {
+      isLoading = true;
+    });
     if (_formKey.currentState!.validate()) {
       String email = _emailController.text.trim();
       String password = _passwordController.text;
@@ -157,6 +167,9 @@ class _RegisterState extends State<Register> {
         );
       }
     }
+    setState(() {
+      isLoading = false;
+    });
   }
 
   @override
@@ -236,6 +249,11 @@ class _RegisterState extends State<Register> {
                       child: const Text('Register'),
                     ),
                   ),
+                  if (isLoading)
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: CircularProgressIndicator(),
+                    ),
                 ],
               ),
             ),
