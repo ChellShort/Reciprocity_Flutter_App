@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:reciprocity/utils/exams_items.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:reciprocity/views/tests.dart';
 
 class TestSelector extends StatefulWidget {
@@ -10,6 +11,28 @@ class TestSelector extends StatefulWidget {
 }
 
 class _TestPruebaState extends State<TestSelector> {
+
+  @override
+  void initState() {
+    super.initState();
+    _checkFirestoreConnection();
+  }
+
+  Future<void> _checkFirestoreConnection() async {
+    try {
+      // Perform a simple Firestore read to check connectivity
+      final doc = await FirebaseFirestore.instance.collection('test').doc('testDoc').get();
+      if (doc.exists) {
+        print('Firestore is connected');
+      } else {
+        print('Firestore document does not exist');
+      }
+    } catch (e) {
+      print('Error connecting to Firestore: $e');
+      // Handle error or show a user-friendly message
+    }
+  }
+
   
 
   @override

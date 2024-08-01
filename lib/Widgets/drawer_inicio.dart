@@ -69,7 +69,7 @@ class DrawerCustomInicio extends StatelessWidget {
                 onTap: () async {
                   try {
                     await FirebaseAuth.instance.signOut();
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => const LandingPage(),

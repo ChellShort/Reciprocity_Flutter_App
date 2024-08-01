@@ -23,14 +23,14 @@ class HowToUse extends StatelessWidget {
               ),
               SizedBox(height: 20),
               HowToUseSection(
-                imageUrl: 'assets/images/im1.jpg',
+                imageUrl: 'assets/images/Screenshot_1722545171.png',
                 description:
-                    'Para comenzar, ingresa tus credenciales en la pantalla de inicio de sesión. Si no tienes una cuenta, puedes registrarte haciendo clic en el botón "Registrarse"..',
+                    'Para comenzar, ingresa tus credenciales en la pantalla de inicio de sesión. Si no tienes una cuenta, puedes registrarte haciendo clic en el botón "REGISTER"..',
               ),
               HowToUseSection(
-                imageUrl: 'assets/images/im2.jpg',
+                imageUrl: 'assets/images/Screenshot_1722545600.png',
                 description:
-                    'Después de iniciar sesión, puedes emparejar tu cuenta con otros usuarios utilizando la función de emparejamiento. Simplemente selecciona el usuario con el que deseas emparejarte y sigue las instrucciones en pantalla..',
+                    'Despues de iniciar sesión, podras elegir entre los distintos examenes disponibles y seguir las instrucciones para conseguir la mejor puntuación posible. Además podras unirte a una reunión virtual si es que asi lo quieres.',
               ),
               HowToUseSection(
                 imageUrl: 'assets/images/im3.jpg',
@@ -61,7 +61,7 @@ class HowToUseSection extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 10.0),
       child: Column(
         children: [
-          Container(width: 200, child: Image.asset(imageUrl)),
+          Container(width: 200, child: Image.asset(imageUrl), decoration: BoxDecoration(border: Border.all(color: Colors.black)),),
           SizedBox(height: 10),
           Text(
             description,

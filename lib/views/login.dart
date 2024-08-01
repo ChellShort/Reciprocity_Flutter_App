@@ -49,7 +49,7 @@ class _LoginState extends State<Login> {
         String? level = userDocument['level'];
 
         if (username != null) {
-          Navigator.pushReplacement(
+          Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) => Home(
@@ -91,7 +91,7 @@ class _LoginState extends State<Login> {
           } else {
             _clearUserEmailPassword();
           }
-          Navigator.pushReplacement(
+          Navigator.push(
             context,
             MaterialPageRoute(
               builder: (context) => Home(
