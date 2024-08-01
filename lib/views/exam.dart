@@ -5,7 +5,10 @@ import 'package:reciprocity/Widgets/app_bar.dart';
 class ExamView extends StatefulWidget {
   final List<Map<String, dynamic>> questionsexam;
   final int numberOfQuestions;
-  ExamView({super.key, required this.questionsexam, required this.numberOfQuestions});
+  ExamView(
+      {super.key,
+      required this.questionsexam,
+      required this.numberOfQuestions});
 
   @override
   State<ExamView> createState() => _ExamViewState();
@@ -50,7 +53,8 @@ class _ExamViewState extends State<ExamView> {
       builder: (context) {
         return AlertDialog(
           title: const Text('Result'),
-          content: Text('You got $correctAnswers out of $_actualnumberOfQuestions correct.'),
+          content: Text(
+              'You got $correctAnswers out of $_actualnumberOfQuestions correct.'),
           actions: [
             TextButton(
               onPressed: () {
@@ -81,10 +85,27 @@ class _ExamViewState extends State<ExamView> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   if (question['image'] != null && question['image'].isNotEmpty)
-                    Image.network(question['image']),
+                    Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Center(
+                          child: FutureBuilder(
+                            future: Future.any([
+                              precacheImage(NetworkImage(question['image']),
+                                  context),
+                            ]),
+                            builder: (c, s) =>
+                                s.connectionState == ConnectionState.done
+                                    ? Image.network(question['image'])
+                                    : const CircularProgressIndicator(),
+                          ),
+                        ),
+                      ),
+                    ),
                   Text(
                     question['question'],
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10),
                   ...question['options'].map<Widget>((option) {

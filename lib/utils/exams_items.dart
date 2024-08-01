@@ -1,29 +1,106 @@
+
 final List<Map<String, dynamic>> questionsgeneralknowledge = [
   {
-    'question': 'What is the capital of France?',
-    'options': ['Paris', 'London', 'Rome', 'Berlin'],
-    'answer': 'Paris',
-    'image': 'https://drive.google.com/uc?export=view&id=1Bqq535bRt3oZiGoJLWrdfykG2PgqtcVM'
+    'question': 'We ___ American.',
+    'options': ['not', 'not are', 'aren’t', 'isn’t'],
+    'answer': 'aren’t',
   },
   {
-    'question': 'What is 2 + 2?',
-    'options': ['3', '4', '5', '6'],
-    'answer': '4',
+    'question': '___ this magazine before?',
+    'options': ['Do you read', 'Are you going to read', 'Are you reading', 'Have you read'],
+    'answer': 'Have you read',
   },
   {
-    'question': 'What is the capital of Spain?',
-    'options': ['Madrid', 'Barcelona', 'Lisbon', 'Seville'],
-    'answer': 'Madrid',
+    'question': 'This is our new teacher. ___ name is Mark.',
+    'options': ['His', 'Her', 'Its', 'He'],
+    'answer': 'His',
   },
   {
-    'question': 'What is the capital of Italy?',
-    'options': ['Venice', 'Milan', 'Rome', 'Naples'],
-    'answer': 'Rome',
+    'question': '',
+    'options': ['The bicycle that’s for sale was built for a child.', 'Some parts of the bicycle must be changed.', 'Debbie is selling the bike because she’s too big for it now.'],
+    'answer': 'The bicycle that’s for sale was built for a child.',
+    'image': 'https://drive.google.com/uc?export=view&id=1Bqq535bRt3oZiGoJLWrdfykG2PgqtcVM',
   },
   {
-    'question': 'What is the capital of Germany?',
-    'options': ['Berlin', 'Hamburg', 'Munich', 'Frankfurt'],
-    'answer': 'Berlin',
+    'question': 'Tim thinks Ben should look on the concert website.\nTim hopes that Ben will be able to come with him.\nTim wants to know if Ben can pay him back today.',
+    'options': ['Tim wants to know if Ben can pay him back today'],
+    'answer': 'Tim wants to know if Ben can pay him back today',
+    'image': 'https://drive.google.com/uc?export=view&id=1ncSie0nrxqohJNW6T09KhIHrZYC8bgO4',
+  },
+  {
+    'question': 'Is Mont Blanc ___ mountain in Europe?',
+    'options': ['the higher', 'the most highest', 'the more high', 'the highest'],
+    'answer': 'the highest',
+  },
+  {
+    'question': 'British people ___ tea with milk.',
+    'options': ['to drink', 'drink', 'drinks', 'are drink'],
+    'answer': 'drink',
+  },
+  {
+    'question': '___ you like Chinese food?',
+    'options': ['Do', 'Does', 'Are', 'Is'],
+    'answer': 'Do',
+  },
+  {
+    'question': 'What ___ do tomorrow?',
+    'options': ['are you going', 'you going', 'are you going to', 'do you go to'],
+    'answer': 'are you going to',
+  },
+  {
+    'question': 'Can I pay ___ credit card?',
+    'options': ['by', 'in', 'on', 'with'],
+    'answer': 'with',
+  },
+  {
+    'question': 'This isn’t my money. It\'s ___.',
+    'options': ['to you', 'the yours', 'your', 'yours'],
+    'answer': 'yours',
+  },
+  {
+    'question': 'Tonight’s dinner is ___ than last night’s.',
+    'options': ['more good', 'gooder', 'better', 'more better'],
+    'answer': 'better',
+  },
+  {
+    'question': 'They’re ___.',
+    'options': ['bigs cars', 'cars bigs', 'big cars', 'bigs car'],
+    'answer': 'big cars',
+  },
+  {
+    'question': '___ the time?',
+    'options': ['What’s', 'What is it', 'What', 'What it is'],
+    'answer': 'What’s',
+  },
+  {
+    'question': 'She ___ to the gym every day.',
+    'options': ['gets', 'goes', 'has', 'does'],
+    'answer': 'goes',
+  },
+  {
+    'question': 'I ___ do my homework last night.',
+    'options': ['not could', 'didn’t can', 'couldn’t', 'can’t'],
+    'answer': 'couldn’t',
+  },
+  {
+    'question': 'There ___ telephone in my hotel room.',
+    'options': ['wasn’t a', 'weren’t a', 'weren’t any', 'wasn’t some'],
+    'answer': 'wasn’t a',
+  },
+  {
+    'question': 'He ___ playing the piano.',
+    'options': ['are', 'does', 'is', 'has'],
+    'answer': 'is',
+  },
+  {
+    'question': 'You get into the park by going this way.\nIt is more expensive to go here alone.\nYou will have fun if you come with friends.',
+    'options': ['You get into the park by going this way'],
+    'answer': 'You get into the park by going this way',
+  },
+  {
+    'question': 'We ___ to Canada.',
+    'options': ['haven’t be', 'hasn’t been', 'hasn’t be', 'haven’t been'],
+    'answer': 'haven’t been',
   },
 ];
 
@@ -91,10 +168,10 @@ final List<Map<String, dynamic>> questionsgeneralmid = [
 final List<Map<String, dynamic>> generalenglish = [
   {
     'exam': questionsgeneralknowledge,
-    'numberOfQuestions': 3,
+    'numberOfQuestions': 15,
     'actualHighestScore': 0,
     'title': 'General Knowledge English',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -102,7 +179,7 @@ final List<Map<String, dynamic>> generalenglish = [
     'numberOfQuestions': 4,
     'actualHighestScore': 0,
     'title': 'General Basics of English',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -110,7 +187,7 @@ final List<Map<String, dynamic>> generalenglish = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'General Middle Level English',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
 ];
@@ -210,7 +287,7 @@ final List<Map<String, dynamic>> java = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Java Knowledge Exam',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -218,7 +295,7 @@ final List<Map<String, dynamic>> java = [
     'numberOfQuestions': 4,
     'actualHighestScore': 0,
     'title': 'Basic Java Exam',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -226,7 +303,7 @@ final List<Map<String, dynamic>> java = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Middle level Java Exam',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
 ];
@@ -327,7 +404,7 @@ final List<Map<String, dynamic>> sql = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Knowledge SQL',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -335,7 +412,7 @@ final List<Map<String, dynamic>> sql = [
     'numberOfQuestions': 4,
     'actualHighestScore': 0,
     'title': 'Basics of SQL',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -343,7 +420,7 @@ final List<Map<String, dynamic>> sql = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Middle Level SQL',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
 ];
@@ -445,7 +522,7 @@ final List<Map<String, dynamic>> networks = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Knowledge Networks',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -453,7 +530,7 @@ final List<Map<String, dynamic>> networks = [
     'numberOfQuestions': 4,
     'actualHighestScore': 0,
     'title': 'Basics of Networks',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -461,7 +538,7 @@ final List<Map<String, dynamic>> networks = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Middle Level Networks',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
 ];
@@ -561,7 +638,7 @@ final List<Map<String, dynamic>> CiberSecurity = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Knowledge Ciber Security',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -569,7 +646,7 @@ final List<Map<String, dynamic>> CiberSecurity = [
     'numberOfQuestions': 4,
     'actualHighestScore': 0,
     'title': 'Basics of Ciber Security',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -577,7 +654,7 @@ final List<Map<String, dynamic>> CiberSecurity = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Middle Level Ciber Security',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
 ];

@@ -7,6 +7,7 @@ import 'package:reciprocity/Widgets/drawer.dart';
 import 'package:reciprocity/Widgets/drawer_header.dart';
 import 'package:reciprocity/utils/drawer_items.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:reciprocity/views/landing_page.dart';
 import 'package:reciprocity/views/login.dart';
 
 class DrawerCustomInicio extends StatelessWidget {
@@ -39,7 +40,7 @@ class DrawerCustomInicio extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Center(child: Text('Current Level: $level', style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)),
+                child: Center(child: Text('Current Level: $level', style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold, fontFamily: "Fjalla"),)),
               ),
               ListView.builder(
                   physics:
@@ -49,10 +50,10 @@ class DrawerCustomInicio extends StatelessWidget {
                       .length, //Cantidad de veces que reproduce la informacion
                   itemBuilder: (context, i) {
                     return ListTile(
-                      leading: Icon(itemsList[i].icon),
-                      title: Text(itemsList[i].title),
+                      leading: Icon(itemsList[i].icon, color: const Color(0xff8C3061)),
+                      title: Text(itemsList[i].title, style: const TextStyle(fontFamily: "Fjalla", fontWeight: FontWeight.bold)),
                       trailing: const Icon(Icons.arrow_forward_ios),
-                      subtitle: Text(itemsList[i].subtitle),
+                      subtitle: Text(itemsList[i].subtitle, style: const TextStyle(fontFamily: "Cabin")),
                       onTap: () {
                         //Al dar tap en n elemento se cambio al mismo tiempo el valor de la variable index en el landing_page
                         cIndex(i);
@@ -61,17 +62,17 @@ class DrawerCustomInicio extends StatelessWidget {
                     );
                   }),
               ListTile(
-                leading: const Icon(Icons.exit_to_app),
-                title: const Text('Exit'),
+                leading: const Icon(Icons.exit_to_app, color: Color(0xff8C3061)),
+                title: const Text('Exit', style: TextStyle(fontFamily: "Fjalla", fontWeight: FontWeight.bold),),
                 trailing: const Icon(Icons.arrow_forward_ios),
-                subtitle: const Text('Return to the welcome menu'),
+                subtitle: const Text('Return to the welcome menu', style: TextStyle(fontFamily: "Cabin")),
                 onTap: () async {
                   try {
                     await FirebaseAuth.instance.signOut();
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const Login(),
+                        builder: (context) => const LandingPage(),
                       ),
                     );
                   } catch (e) {
