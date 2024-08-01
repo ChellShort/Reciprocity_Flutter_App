@@ -15,24 +15,25 @@ class _StatisticsState extends State<Statistics> {
             child: Container(
               width: double.infinity,
               decoration: const BoxDecoration(
-                color: Colors.grey,
+                color: Color.fromARGB(255,140, 48, 97)
               ),
               margin: const EdgeInsets.all(10),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const Text('10 rooms in session'),
-                  const Text('150 people online'),
-                  const Text('Decide the topic to discuss...'),
-                  const Text('What is reciprocity?'),
+                  const Text('Increase your chances to be hired', style: TextStyle(fontFamily: "Fjalla", fontSize: 20, color: Colors.white)),
+                  const Text('Anytime, anywhere', style: TextStyle(fontFamily: "Fjalla", fontSize: 20, color: Colors.white)),
+                  const Text('Develop your technical Skills', style: TextStyle(fontFamily: "Fjalla", fontSize: 20, color: Colors.white)),
+                  const Text('WHAT IS TLTI?', style: TextStyle(fontFamily: "Fjalla", fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Container(
-                        height: 90,
-                        width: 90,
+                        height: 120,
+                        width: 120,
                         decoration: const BoxDecoration(
                           color: Colors.orange,
+                          shape: BoxShape.circle,
                           ),
                           child: const Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -41,21 +42,24 @@ class _StatisticsState extends State<Statistics> {
                               style: TextStyle(
                                 color: Colors.white, 
                                 fontSize: 25,
+                                fontFamily: "Fjalla",
                                 fontWeight: FontWeight.bold),
                               '7 min'),
                               Text(
                                 style: TextStyle(
                                   color: Colors.white, 
-                                  fontSize: 10,
+                                  fontSize: 20,
+                                  fontFamily: "Fjalla",
                                   fontWeight: FontWeight.bold),
-                                'Session')
+                                'Tests')
                             ],
                           ),
                       ),
                       Container(
-                        height: 90,
-                        width: 90,
+                        height: 120,
+                        width: 120,
                         decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
                           color: Colors.orange,
                           ),
                           child: const Column(
@@ -65,22 +69,25 @@ class _StatisticsState extends State<Statistics> {
                               style: TextStyle(
                                 color: Colors.white, 
                                 fontSize: 25,
+                                fontFamily: "Fjalla",
                                 fontWeight: FontWeight.bold),
-                              '1:1'),
+                              'Virtual'),
                               Text(
                                 style: TextStyle(
                                   color: Colors.white, 
-                                  fontSize: 10,
+                                  fontSize: 20,
+                                  fontFamily: "Fjalla",
                                   fontWeight: FontWeight.bold),
-                                'Conversation')
+                                'Think tank')
                             ],
                           ),
                       ),
                       Container(
-                        height: 90,
-                        width: 90,
+                        height: 120,
+                        width: 120,
                         decoration: const BoxDecoration(
                           color: Colors.orange,
+                          shape: BoxShape.circle,
                           ),
                           child: const Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -89,23 +96,31 @@ class _StatisticsState extends State<Statistics> {
                               style: TextStyle(
                                 color: Colors.white, 
                                 fontSize: 25,
+                                fontFamily: "Fjalla",
                                 fontWeight: FontWeight.bold),
-                              '10+'),
+                              '7+ Skills'),
                               Text(
                                 style: TextStyle(
                                   color: Colors.white, 
-                                  fontSize: 10,
+                                  fontSize: 20,
+                                  fontFamily: "Fjalla",
                                   fontWeight: FontWeight.bold),
-                                'Universities')
+                                'Quizzes')
                             ],
                           ),
                       ),
                     ],
                   ),
-                  const Image(
-                      width: 100,
-                      height: 100,
-                      image: AssetImage('assets/images/reciprocitylogo.png'))
+                  Container(
+                    decoration: const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Image(
+                          width: 100,
+                          height: 100,
+                          image: AssetImage('assets/images/reciprocitylogo.png')),
+                    ),
+                  )
                 ],
               ),
             ),

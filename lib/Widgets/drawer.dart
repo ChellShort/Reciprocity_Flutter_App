@@ -33,10 +33,10 @@ class DrawerCustom extends StatelessWidget {
                 itemCount: itemsList.length, //Cantidad de veces que reproduce la informacion
                 itemBuilder: (context, i) {
                   return ListTile(
-                    leading: Icon(itemsList[i].icon),
-                    title: Text(itemsList[i].title),
-                    trailing: const Icon(Icons.arrow_forward_ios),
-                    subtitle: Text(itemsList[i].subtitle),
+                    leading: Icon(itemsList[i].icon, color: const Color(0xff8C3061)),
+                    title: Text(itemsList[i].title, style: const TextStyle(fontFamily: "Fjalla", fontWeight: FontWeight.bold,)),
+                    trailing: const Icon(Icons.arrow_forward_ios,),
+                    subtitle: Text(itemsList[i].subtitle, style: const TextStyle(fontFamily: "Cabin")),
                     onTap: () { //Al dar tap en n elemento se cambio al mismo tiempo el valor de la variable index en el landing_page
                       cIndex(i);
                       Navigator.pop(context);

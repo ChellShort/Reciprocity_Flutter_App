@@ -22,19 +22,19 @@ class _TestPruebaState extends State<TestSelector> {
           child: Column(
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'WELCOME TO TLTI',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                    'WELCOME',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30, fontFamily: "Fjalla"),
                   ),
                 ],
               ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('Please choose your training',
-                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20))
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, fontFamily: "Cabin"))
                 ],
               ),
             ],
@@ -57,13 +57,13 @@ class _TestPruebaState extends State<TestSelector> {
                 child: Container(
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.black),
-                    color: Color.fromARGB(255, 192, 192, 192),
+                    color: const Color(0xff522258),
                   ),
                   child: ListTile(
                     contentPadding: const EdgeInsets.all(5.0),
-                    title: Center(child: Text(listtileitems[index]['title'])),
+                    title: Center(child: Text(listtileitems[index]['title'], style: const TextStyle(fontFamily: "Fjalla", fontSize: 20, color: Colors.white),)),
                     subtitle:
-                        Center(child: Text(listtileitems[index]['subtitle'])),
+                        Center(child: Text(listtileitems[index]['subtitle'], style: const TextStyle(fontFamily: "Cabin", fontSize: 20, color: Colors.white))),
                   ),
                 ),
               ),

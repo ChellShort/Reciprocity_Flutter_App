@@ -97,7 +97,7 @@ class _ExamViewState extends State<ExamView> {
                             builder: (c, s) =>
                                 s.connectionState == ConnectionState.done
                                     ? Image.network(question['image'])
-                                    : CircularProgressIndicator(),
+                                    : const CircularProgressIndicator(),
                           ),
                         ),
                       ),

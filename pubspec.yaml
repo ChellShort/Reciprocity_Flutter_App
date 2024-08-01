@@ -29,3 +29,10 @@ flutter:
   uses-material-design: true
   assets: 
   - assets/images/
+  fonts:
+  - family: Fjalla
+    fonts:
+      - asset: lib/fonts/FjallaOne-Regular.ttf
+  - family: Cabin
+    fonts:
+      - asset: lib/fonts/Cabin-Regular.ttf

@@ -10,7 +10,7 @@ class WelcomeSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SizedBox(
-              height: 900,
+              height: 1100,
               child: Column(
                 children: [
                 Welcome(),

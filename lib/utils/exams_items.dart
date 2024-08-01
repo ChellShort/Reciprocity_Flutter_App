@@ -171,7 +171,7 @@ final List<Map<String, dynamic>> generalenglish = [
     'numberOfQuestions': 15,
     'actualHighestScore': 0,
     'title': 'General Knowledge English',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -179,7 +179,7 @@ final List<Map<String, dynamic>> generalenglish = [
     'numberOfQuestions': 4,
     'actualHighestScore': 0,
     'title': 'General Basics of English',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -187,7 +187,7 @@ final List<Map<String, dynamic>> generalenglish = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'General Middle Level English',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
 ];
@@ -287,7 +287,7 @@ final List<Map<String, dynamic>> java = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Java Knowledge Exam',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -295,7 +295,7 @@ final List<Map<String, dynamic>> java = [
     'numberOfQuestions': 4,
     'actualHighestScore': 0,
     'title': 'Basic Java Exam',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -303,7 +303,7 @@ final List<Map<String, dynamic>> java = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Middle level Java Exam',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
 ];
@@ -404,7 +404,7 @@ final List<Map<String, dynamic>> sql = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Knowledge SQL',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -412,7 +412,7 @@ final List<Map<String, dynamic>> sql = [
     'numberOfQuestions': 4,
     'actualHighestScore': 0,
     'title': 'Basics of SQL',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -420,7 +420,7 @@ final List<Map<String, dynamic>> sql = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Middle Level SQL',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
 ];
@@ -522,7 +522,7 @@ final List<Map<String, dynamic>> networks = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Knowledge Networks',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -530,7 +530,7 @@ final List<Map<String, dynamic>> networks = [
     'numberOfQuestions': 4,
     'actualHighestScore': 0,
     'title': 'Basics of Networks',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -538,7 +538,7 @@ final List<Map<String, dynamic>> networks = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Middle Level Networks',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
 ];
@@ -638,7 +638,7 @@ final List<Map<String, dynamic>> CiberSecurity = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Knowledge Ciber Security',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -646,7 +646,7 @@ final List<Map<String, dynamic>> CiberSecurity = [
     'numberOfQuestions': 4,
     'actualHighestScore': 0,
     'title': 'Basics of Ciber Security',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
   {
@@ -654,7 +654,7 @@ final List<Map<String, dynamic>> CiberSecurity = [
     'numberOfQuestions': 3,
     'actualHighestScore': 0,
     'title': 'Middle Level Ciber Security',
-    'image': 'assets/images/basic.png',
+    'image': 'assets/images/logoconleyenda.png',
     'times_completed': 0,
   },
 ];

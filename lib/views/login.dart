@@ -177,7 +177,7 @@ class _LoginState extends State<Login> {
                   TextFormField(
                     controller: _emailController,
                     decoration: const InputDecoration(
-                      icon: Icon(Icons.email),
+                      icon: Icon(Icons.email, color: Color(0xff8C3061) ),
                       border: OutlineInputBorder(),
                       labelText: 'Email',
                     ),
@@ -196,7 +196,7 @@ class _LoginState extends State<Login> {
                     controller: _passwordController,
                     obscureText: true,
                     decoration: const InputDecoration(
-                      icon: Icon(Icons.lock),
+                      icon: Icon(Icons.lock, color: Color(0xff8C3061 )),
                       border: OutlineInputBorder(),
                       labelText: 'Password',
                     ),
@@ -242,6 +242,7 @@ class _LoginState extends State<Login> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
+                      style: const ButtonStyle(backgroundColor: WidgetStatePropertyAll(Color.fromARGB(255, 217, 95, 89))),
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           setState(() {
@@ -252,7 +253,7 @@ class _LoginState extends State<Login> {
                               _emailController.text, _passwordController.text);
                         }
                       },
-                      child: const Text('Log In'),
+                      child: const Text('LOG IN',style: TextStyle(fontFamily: "Cabin", color: Colors.white)),
                     ),
                   ),
                   if (isLoading)
@@ -261,8 +262,7 @@ class _LoginState extends State<Login> {
                       child: CircularProgressIndicator(),
                     ),
                 ],
-              ),
-            ),
+              ),            ),
           ),
           Column(
             children: [
@@ -271,6 +271,7 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
+                    style: const ButtonStyle(backgroundColor: WidgetStatePropertyAll(Color.fromARGB(255, 217, 95, 89))),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -279,7 +280,7 @@ class _LoginState extends State<Login> {
                         ),
                       );
                     },
-                    child: const Text('Register now!'),
+                    child: const Text('REGISTER NOW!', style: TextStyle(fontFamily: "Cabin", color: Colors.white),),
                   ),
                 ],
               ),

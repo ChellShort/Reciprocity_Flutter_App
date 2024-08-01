@@ -19,9 +19,12 @@ class _VideoMeetingsState extends State<VideoMeetings> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(
+          const Text(
             'PREPARE FOR THE VIDEOMEETING',
-            style: GoogleFonts.fjallaOne(textStyle: const TextStyle(fontSize: 30)),
+            style: TextStyle(
+              fontFamily: "Fjalla",
+              fontSize: 30
+            ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 30,),
@@ -50,9 +53,13 @@ class _VideoMeetingsState extends State<VideoMeetings> {
                   ],
                 )),
           ),
-          Text(
+          const Text(
             'Tap on the Image',
-            style: GoogleFonts.cabin( textStyle: TextStyle(fontSize: 20, color: Colors.blue)),
+            style: TextStyle(
+              fontFamily: "Cabin",
+              fontSize: 20,
+              color: Colors.blue
+            ),
             textAlign: TextAlign.center,
           ),
         ],

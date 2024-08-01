@@ -8,7 +8,7 @@ class DrawerHeaderCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     return DrawerHeader(
       decoration: const BoxDecoration(
-        color: Colors.grey,
+        color: Color(0xff522258),
       ),
       child: Center(
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -20,7 +20,7 @@ class DrawerHeaderCustom extends StatelessWidget {
             child: Icon(
               Icons.person,
               size: 25.0,
-              color: Colors.black,
+              color: Colors.white,
             ),
           ),
         ),
@@ -30,7 +30,7 @@ class DrawerHeaderCustom extends StatelessWidget {
                 username ?? '',
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
-                style: const TextStyle(fontSize: 20),
+                style: const TextStyle(fontSize: 20, fontFamily: "Fjalla", color: Colors.white),
               ),
         )
       ])),

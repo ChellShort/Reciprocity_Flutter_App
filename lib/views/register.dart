@@ -40,43 +40,43 @@ class _RegisterState extends State<Register> {
           child: SimpleDialog(
             
             contentPadding: EdgeInsets.all(8.0),
-            title: const Text('Seleccione su nivel de inglés'),
+            title: const Text('Seleccione su nivel de ingles', style: TextStyle(fontFamily: "Fjalla",)),
             children: <Widget>[
               SimpleDialogOption(
                 onPressed: () {
                   Navigator.pop(context, 'A1');
                 },
-                child: const Text('A1'),
+                child: const Text('A1', style: TextStyle(fontFamily: "Cabin",)),
               ),
               SimpleDialogOption(
                 onPressed: () {
                   Navigator.pop(context, 'A2');
                 },
-                child: const Text('A2'),
+                child: const Text('A2', style: TextStyle(fontFamily: "Cabin",)),
               ),
               SimpleDialogOption(
                 onPressed: () {
                   Navigator.pop(context, 'B1');
                 },
-                child: const Text('B1'),
+                child: const Text('B1', style: TextStyle(fontFamily: "Cabin",)),
               ),
               SimpleDialogOption(
                 onPressed: () {
                   Navigator.pop(context, 'B2');
                 },
-                child: const Text('B2'),
+                child: const Text('B2', style: TextStyle(fontFamily: "Cabin",)),
               ),
               SimpleDialogOption(
                 onPressed: () {
                   Navigator.pop(context, 'C1');
                 },
-                child: const Text('C1'),
+                child: const Text('C1', style: TextStyle(fontFamily: "Cabin",)),
               ),
               SimpleDialogOption(
                 onPressed: () {
                   Navigator.pop(context, 'C2');
                 },
-                child: const Text('C2'),
+                child: const Text('C2', style: TextStyle(fontFamily: "Cabin",)),
               ),
             ],
           ),
@@ -94,12 +94,52 @@ class _RegisterState extends State<Register> {
           backgroundColor: Colors.white,
           content: Text(
             style: const TextStyle(color: Colors.black),
-            'Nivel de inglés guardado como: $selectedLevel',
+            'English level saved: $selectedLevel',
           ),
         ),
       );
     }
   }
+
+  Future<void> _showSessionDialog(String userId) async {
+    bool? interestedInSessions = await showDialog<bool>(
+      context: context,
+      builder: (BuildContext context) {
+        return SimpleDialog(
+          title: const Text('¿Está interesado en atender sesiones virtuales?',style: TextStyle(fontFamily: "Fjalla",)),
+          children: <Widget>[
+            SimpleDialogOption(
+              onPressed: () {
+                Navigator.pop(context, true);
+              },
+              child: const Text('Sí', style: TextStyle(fontFamily: "Cabin",)),
+            ),
+            SimpleDialogOption(
+              onPressed: () {
+                Navigator.pop(context, false);
+              },
+              child: const Text('No', style: TextStyle(fontFamily: "Cabin",)),
+            ),
+          ],
+        );
+      },
+    );
+
+    if (interestedInSessions != null) {
+      await _firestore.collection('users').doc(userId).update({
+        'interestedInSessions': interestedInSessions,
+      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            'Interested in virtual sessions: ${interestedInSessions ? 'Yes' : 'No'}',
+          ),
+        ),
+      );
+    }
+  }
+
 
   _register() async {
     setState(() {
@@ -152,6 +192,8 @@ class _RegisterState extends State<Register> {
 
         // Mostrar cuadro de diálogo para seleccionar nivel de inglés
         await _showLevelDialog(userCredential.user!.uid);
+        // Mostrar cuadro de diálogo para preguntar sobre sesiones virtuales
+        await _showSessionDialog(userCredential.user!.uid);
 
         Navigator.pop(context);
       } on PlatformException catch (error) {
@@ -182,6 +224,7 @@ class _RegisterState extends State<Register> {
           const Text(
             style: TextStyle(
               fontSize: 30,
+              fontFamily: "Fjalla",
               fontWeight: FontWeight.bold,
             ),
             'Register',
@@ -195,9 +238,10 @@ class _RegisterState extends State<Register> {
                   TextFormField(
                     controller: _usernameController,
                     decoration: const InputDecoration(
-                      icon: Icon(Icons.person),
+                      icon: Icon(Icons.person, color: Color(0xff8C3061)),
                       border: OutlineInputBorder(),
                       labelText: 'Username',
+                      labelStyle: TextStyle(fontFamily: "Cabin"),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
@@ -210,9 +254,10 @@ class _RegisterState extends State<Register> {
                   TextFormField(
                     controller: _emailController,
                     decoration: const InputDecoration(
-                      icon: Icon(Icons.email),
+                      icon: Icon(Icons.email, color: Color(0xff8C3061)),
                       border: OutlineInputBorder(),
                       labelText: 'Email',
+                      labelStyle: TextStyle(fontFamily: "Cabin"),
                     ),
                     keyboardType: TextInputType.emailAddress,
                     validator: (value) {
@@ -229,7 +274,8 @@ class _RegisterState extends State<Register> {
                     controller: _passwordController,
                     obscureText: true,
                     decoration: const InputDecoration(
-                      icon: Icon(Icons.lock),
+                      labelStyle: TextStyle(fontFamily: "Cabin"),
+                      icon: Icon(Icons.lock, color: Color(0xff8C3061)),
                       border: OutlineInputBorder(),
                       labelText: 'Password',
                     ),
@@ -245,8 +291,9 @@ class _RegisterState extends State<Register> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
+                      style: const ButtonStyle(backgroundColor: WidgetStatePropertyAll(Color.fromARGB(255, 217, 95, 89))),
                       onPressed: _register,
-                      child: const Text('Register'),
+                      child: const Text('REGISTER', style: TextStyle(fontFamily: "Cabin", color: Colors.white),),
                     ),
                   ),
                   if (isLoading)
@@ -260,11 +307,12 @@ class _RegisterState extends State<Register> {
           ),
           Column(
             children: [
-              const Text('Already have an account?'),
+              const Text('Already have an account?', style: TextStyle(fontFamily: "Cabin",)),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
+                    style: const ButtonStyle(backgroundColor: WidgetStatePropertyAll(Color.fromARGB(255, 217, 95, 89))),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -273,7 +321,7 @@ class _RegisterState extends State<Register> {
                         ),
                       );
                     },
-                    child: const Text('Log In'),
+                    child: const Text('LOG IN', style: TextStyle(fontFamily: "Cabin", color: Colors.white)),
                   ),
                 ],
               ),

@@ -57,6 +57,7 @@ class _ListTileCustomState extends State<ListTileCustom> {
           Container(
             decoration: BoxDecoration(
               border: Border.all(color: Colors.black),
+              color: const Color(0xff8C3061)
             ),
             child: GestureDetector(
               onTap: () async {
@@ -88,21 +89,25 @@ class _ListTileCustomState extends State<ListTileCustom> {
                       children: [
                         Column(
                           children: [
-                            Text(widget.title),
+                            Text(widget.title, style: const TextStyle(fontFamily: "Fjalla", fontSize: 20, color: Colors.white),),
                             Text(
-                                'Highest Score: ${widget.actualHighestScore}/${widget.numberOfQuestions}. Times completed: ${widget.timesCompleted}'),
+                              maxLines: 2,
+                                'Highest Score: ${widget.actualHighestScore}/${widget.numberOfQuestions}.\nTimes completed: ${widget.timesCompleted}', style: const TextStyle(fontFamily: "Cabin", fontSize: 20, color: Colors.white)),
                           ],
                         ),
                       ],
                     ),
-                    leading: const Icon(Icons.book),
+                    leading: const Icon(Icons.book, color: Colors.white),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(
-                      widget.imageasset ??
-                          'assets/images/logoconleyenda.png',
-                      height: 220,
+                    child: Container(
+                      color: Colors.white,
+                      child: Image.asset(
+                        widget.imageasset ??
+                            'assets/images/logoconleyenda.png',
+                        height: 220,
+                      ),
                     ),
                   ),
                 ],
