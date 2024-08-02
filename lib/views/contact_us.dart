@@ -32,7 +32,7 @@ class ContactUs extends StatelessWidget {
                   children: const [
                     Icon(Icons.email),
                     SizedBox(width: 10),
-                    Text('contact@example.com'),
+                    Text('tltinstitute@tlti.com.mx'),
                   ],
                 ),
                 const SizedBox(height: 10),
@@ -40,15 +40,15 @@ class ContactUs extends StatelessWidget {
                   children: const [
                     Icon(Icons.phone),
                     SizedBox(width: 10),
-                    Text('+1 234 567 890'),
+                    Text('+52 773 174 4523'),
                   ],
                 ),
                 const SizedBox(height: 10),
                 Row(
-                  children: const [
+                  children: [
                     Icon(Icons.location_on),
                     SizedBox(width: 10),
-                    Text('123 Main Street, City, Country'),
+                    Container(width: 300, child: Text('Carretera Estatal 420 S/N, El Rosario, 76240, 76240 Santiago de Querétaro, Qro.', maxLines: 2,)),
                   ],
                 ),
               ],

@@ -31,7 +31,7 @@ class Faq extends StatelessWidget {
               ),
             ),
             const Text(
-              '\nQ: ¿Qué es TLTI?',
+              '\nQ: What is TLTI?',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -39,11 +39,11 @@ class Faq extends StatelessWidget {
               ),
             ),
             const Text(
-              'A: TLTI es una aplicación diseñada para facilitar la práctica del inglés para estudiantes de STEM de la UPQ.',
+              'A: TLTI is an application designed to facilitate the practice of technical English for STEM students.',
               style: TextStyle(fontSize: 16, fontFamily: "Cabin",),
             ),
             const Text(
-              '\nQ: ¿Cómo puedo registrarme en TLTI?',
+              '\nQ: How can I register for TLTI?',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -51,11 +51,11 @@ class Faq extends StatelessWidget {
               ),
             ),
             const Text(
-              'A: Puedes registrarte en TLTI descargando la aplicación desde la tienda de aplicaciones y siguiendo el proceso de registro, que incluye la creación de un perfil',
+              'A: You can register for TLTI by following the registration process created within the application.',
               style: TextStyle(fontSize: 16, fontFamily: "Cabin",),
             ),
             const Text(
-              '\nQ: ¿Es TLTI gratuita?',
+              '\nQ: Is TLTI free?',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -63,11 +63,11 @@ class Faq extends StatelessWidget {
               ),
             ),
             const Text(
-              'A: TLTI ofrece una versión gratuita con acceso a funciones básicas. También hay una suscripción premium disponible que desbloquea características adicionales como sesiones extendidas, informes de progreso y corrección de pronunciación.',
+              'A: TLTI is free. In the future, we plan to offer a premium subscription that will unlock additional features such as extended sessions, progress reports, and pronunciation correction.',
               style: TextStyle(fontSize: 16, fontFamily: "Cabin",),
             ),
             const Text(
-              '\nQ: ¿Qué tipo de contenido está disponible en TLTI?',
+              '\nQ: What type of content is available on TLTI?',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -75,11 +75,11 @@ class Faq extends StatelessWidget {
               ),
             ),
             const Text(
-              'A: TLTI incluye una base de datos de contenido relacionado con STEM, lo que permite a los usuarios participar en conversaciones y actividades de aprendizaje basadas en temas relevantes para sus estudios y profesión.',
+              'A: TLTI includes a database of content related to STEM, allowing users to engage in learning activities such as technical exams in various areas and video calls.',
               style: TextStyle(fontSize: 16, fontFamily: "Cabin",),
             ),
             const Text(
-              '\nQ: ¿Cómo protege TLTI mi información personal?',
+              '\nQ: How does TLTI protect my personal information?',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -87,11 +87,11 @@ class Faq extends StatelessWidget {
               ),
             ),
             const Text(
-              'A: TLTI implementa medidas de seguridad avanzadas, incluyendo encriptación de datos y políticas de privacidad estrictas para asegurar que tu información personal esté protegida.',
+              'A: TLTI implements advanced security measures, including data encryption and strict privacy policies to ensure your personal information is protected.',
               style: TextStyle(fontSize: 16, fontFamily: "Cabin",),
             ),
             const Text(
-              '\nQ: ¿Puedo acceder a TLTI desde diferentes dispositivos?',
+              '\nQ: Can I access TLTI from different devices?',
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -99,22 +99,10 @@ class Faq extends StatelessWidget {
               ),
             ),
             const Text(
-              'A: Sí, TLTI es una plataforma web responsiva, lo que significa que puedes acceder a ella desde computadoras, tablets y smartphones, asegurando una experiencia de usuario óptima en cualquier dispositivo.',
+              'A: For now, TLTI is exclusive to Android devices.',
               style: TextStyle(fontSize: 16, fontFamily: "Cabin",),
             ),
-            const Text(
-              '\nQ:  ¿TLTI ofrece alguna forma de evaluación de progreso?',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                fontFamily: "Fjalla",
-              ),
-            ),
-            const Text(
-              'A: Sí, los usuarios de la versión premium tienen acceso a informes de progreso que evalúan su desempeño en inglés, incluyendo áreas como pronunciación, vocabulario y fluidez.',
-              style: TextStyle(fontSize: 16, fontFamily: "Cabin",),
-            ),
-            // Añade más preguntas y respuestas según sea necesario
+            // Add more questions and answers as needed
           ],
         ),
       ),
@@ -135,7 +123,7 @@ class MyHomePage extends StatelessWidget {
             flex: 40,
             child: Faq(),
           ),
-          // Puedes agregar más widgets aquí si es necesario
+          // You can add more widgets here if necessary
         ],
       ),
     );

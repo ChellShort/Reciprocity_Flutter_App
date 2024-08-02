@@ -25,17 +25,17 @@ class HowToUse extends StatelessWidget {
               HowToUseSection(
                 imageUrl: 'assets/images/Screenshot_1722545171.png',
                 description:
-                    'Para comenzar, ingresa tus credenciales en la pantalla de inicio de sesión. Si no tienes una cuenta, puedes registrarte haciendo clic en el botón "REGISTER"..',
+                    'To get started, enter your credentials on the login screen. If you do not have an account, you can register by clicking the "REGISTER" button...',
               ),
               HowToUseSection(
                 imageUrl: 'assets/images/Screenshot_1722545600.png',
                 description:
-                    'Despues de iniciar sesión, podras elegir entre los distintos examenes disponibles y seguir las instrucciones para conseguir la mejor puntuación posible. Además podras unirte a una reunión virtual si es que asi lo quieres.',
+                    'After logging in, you will be able to choose between the different exams available and follow the instructions to get the best possible score. You can also join a virtual meeting if you want.',
               ),
               HowToUseSection(
                 imageUrl: 'assets/images/im3.jpg',
                 description:
-                    'El objetivo principal de la aplicación es mejorar la colaboración entre usuarios para practicar mutuamente.',
+                    'The main objective of the application is to improve collaboration between users to practice on each other.',
               ),
             ],
           ),
