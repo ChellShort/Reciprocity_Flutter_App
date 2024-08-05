@@ -5,10 +5,12 @@ import 'package:reciprocity/Widgets/app_bar.dart';
 class ExamView extends StatefulWidget {
   final List<Map<String, dynamic>> questionsexam;
   final int numberOfQuestions;
-  ExamView(
-      {super.key,
-      required this.questionsexam,
-      required this.numberOfQuestions});
+
+  ExamView({
+    Key? key,
+    required this.questionsexam,
+    required this.numberOfQuestions,
+  }) : super(key: key);
 
   @override
   State<ExamView> createState() => _ExamViewState();
@@ -18,7 +20,9 @@ class _ExamViewState extends State<ExamView> {
   List<Map<String, dynamic>> _allQuestions = [];
   int _actualnumberOfQuestions = 0;
   late List<Map<String, dynamic>> _selectedQuestions;
-  final Map<int, String> _selectedAnswers = {};
+  final Map<int, Set<String>> _selectedAnswers = {};
+  final Map<int, String> _selectedSingleAnswer = {};
+  final Map<int, String> _openAnswers = {};
 
   @override
   void initState() {
@@ -43,8 +47,22 @@ class _ExamViewState extends State<ExamView> {
   void _submitAnswers() {
     int correctAnswers = 0;
     _selectedQuestions.asMap().forEach((index, question) {
-      if (_selectedAnswers[index] == question['answer']) {
-        correctAnswers++;
+      if (question['type'] == 'mult') {
+        Set<String> correctOptions = Set.from(question['answer']);
+        if (_selectedAnswers[index] != null &&
+            _selectedAnswers[index]!.containsAll(correctOptions) &&
+            correctOptions.containsAll(_selectedAnswers[index]!)) {
+          correctAnswers++;
+        }
+      } else if (question['type'] == 'unique') {
+        if (_selectedSingleAnswer[index] == question['answer']) {
+          correctAnswers++;
+        }
+      } else if (question['type'] == 'open') {
+        if (_openAnswers[index] != null &&
+            _openAnswers[index]!.trim().toLowerCase() == question['answer'].trim().toLowerCase()) {
+          correctAnswers++;
+        }
       }
     });
 
@@ -108,18 +126,49 @@ class _ExamViewState extends State<ExamView> {
                         fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10),
-                  ...question['options'].map<Widget>((option) {
-                    return RadioListTile(
+                  if (question['type'] == 'mult') ...question['options'].map<Widget>((option) {
+                    bool isChecked = _selectedAnswers[index]?.contains(option) ?? false;
+                    return CheckboxListTile(
                       title: Text(option),
-                      value: option,
-                      groupValue: _selectedAnswers[index],
+                      value: isChecked,
                       onChanged: (value) {
                         setState(() {
-                          _selectedAnswers[index] = value!;
+                          if (_selectedAnswers[index] == null) {
+                            _selectedAnswers[index] = <String>{};
+                          }
+                          if (value == true) {
+                            _selectedAnswers[index]!.add(option);
+                          } else {
+                            _selectedAnswers[index]!.remove(option);
+                          }
                         });
                       },
                     );
                   }).toList(),
+                  if (question['type'] == 'unique') ...question['options'].map<Widget>((option) {
+                    bool isSelected = _selectedSingleAnswer[index] == option;
+                    return RadioListTile<String>(
+                      title: Text(option),
+                      value: option,
+                      groupValue: _selectedSingleAnswer[index],
+                      onChanged: (value) {
+                        setState(() {
+                          _selectedSingleAnswer[index] = value!;
+                        });
+                      },
+                    );
+                  }).toList(),
+                  if (question['type'] == 'open') 
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Your Answer',
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          _openAnswers[index] = value;
+                        });
+                      },
+                    ),
                 ],
               ),
             ),

@@ -28,6 +28,9 @@ class _RegisterState extends State<Register> {
         .collection('users')
         .where('email', isEqualTo: email)
         .get();
+    setState(() {
+      isLoading = false;
+    });
     return result.docs.isNotEmpty;
   }
 
@@ -38,45 +41,65 @@ class _RegisterState extends State<Register> {
         return PopScope(
           canPop: false,
           child: SimpleDialog(
-            
-            contentPadding: EdgeInsets.all(8.0),
-            title: const Text('Seleccione su nivel de ingles', style: TextStyle(fontFamily: "Fjalla",)),
+            contentPadding: const EdgeInsets.all(8.0),
+            title: const Text('Seleccione su nivel de ingles',
+                style: TextStyle(
+                  fontFamily: "Fjalla",
+                )),
             children: <Widget>[
               SimpleDialogOption(
                 onPressed: () {
                   Navigator.pop(context, 'A1');
                 },
-                child: const Text('A1', style: TextStyle(fontFamily: "Cabin",)),
+                child: const Text('A1',
+                    style: TextStyle(
+                      fontFamily: "Cabin",
+                    )),
               ),
               SimpleDialogOption(
                 onPressed: () {
                   Navigator.pop(context, 'A2');
                 },
-                child: const Text('A2', style: TextStyle(fontFamily: "Cabin",)),
+                child: const Text('A2',
+                    style: TextStyle(
+                      fontFamily: "Cabin",
+                    )),
               ),
               SimpleDialogOption(
                 onPressed: () {
                   Navigator.pop(context, 'B1');
                 },
-                child: const Text('B1', style: TextStyle(fontFamily: "Cabin",)),
+                child: const Text('B1',
+                    style: TextStyle(
+                      fontFamily: "Cabin",
+                    )),
               ),
               SimpleDialogOption(
                 onPressed: () {
                   Navigator.pop(context, 'B2');
                 },
-                child: const Text('B2', style: TextStyle(fontFamily: "Cabin",)),
+                child: const Text('B2',
+                    style: TextStyle(
+                      fontFamily: "Cabin",
+                    )),
               ),
               SimpleDialogOption(
                 onPressed: () {
                   Navigator.pop(context, 'C1');
                 },
-                child: const Text('C1', style: TextStyle(fontFamily: "Cabin",)),
+                child: const Text('C1',
+                    style: TextStyle(
+                      fontFamily: "Cabin",
+                    )),
               ),
               SimpleDialogOption(
                 onPressed: () {
                   Navigator.pop(context, 'C2');
                 },
-                child: const Text('C2', style: TextStyle(fontFamily: "Cabin",)),
+                child: const Text('C2',
+                    style: TextStyle(
+                      fontFamily: "Cabin",
+                    )),
               ),
             ],
           ),
@@ -106,19 +129,28 @@ class _RegisterState extends State<Register> {
       context: context,
       builder: (BuildContext context) {
         return SimpleDialog(
-          title: const Text('¿Está interesado en atender sesiones virtuales?',style: TextStyle(fontFamily: "Fjalla",)),
+          title: const Text('¿Está interesado en atender sesiones virtuales?',
+              style: TextStyle(
+                fontFamily: "Fjalla",
+              )),
           children: <Widget>[
             SimpleDialogOption(
               onPressed: () {
                 Navigator.pop(context, true);
               },
-              child: const Text('Sí', style: TextStyle(fontFamily: "Cabin",)),
+              child: const Text('Sí',
+                  style: TextStyle(
+                    fontFamily: "Cabin",
+                  )),
             ),
             SimpleDialogOption(
               onPressed: () {
                 Navigator.pop(context, false);
               },
-              child: const Text('No', style: TextStyle(fontFamily: "Cabin",)),
+              child: const Text('No',
+                  style: TextStyle(
+                    fontFamily: "Cabin",
+                  )),
             ),
           ],
         );
@@ -139,7 +171,6 @@ class _RegisterState extends State<Register> {
       );
     }
   }
-
 
   _register() async {
     setState(() {
@@ -173,11 +204,10 @@ class _RegisterState extends State<Register> {
         );
 
         // Guardar el usuario en Firestore
-        await _firestore.collection('users').doc(userCredential.user!.uid).set({
-          'email': email,
-          'username': username,
-          'level': 'unknown'
-        });
+        await _firestore
+            .collection('users')
+            .doc(userCredential.user!.uid)
+            .set({'email': email, 'username': username, 'level': 'unknown'});
 
         // Mostrar mensaje de éxito
         ScaffoldMessenger.of(context).showSnackBar(
@@ -291,9 +321,15 @@ class _RegisterState extends State<Register> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ElevatedButton(
-                      style: const ButtonStyle(backgroundColor: WidgetStatePropertyAll(Color.fromARGB(255, 217, 95, 89))),
+                      style: const ButtonStyle(
+                          backgroundColor: WidgetStatePropertyAll(
+                              Color.fromARGB(255, 217, 95, 89))),
                       onPressed: _register,
-                      child: const Text('REGISTER', style: TextStyle(fontFamily: "Cabin", color: Colors.white),),
+                      child: const Text(
+                        'REGISTER',
+                        style:
+                            TextStyle(fontFamily: "Cabin", color: Colors.white),
+                      ),
                     ),
                   ),
                   if (isLoading)
@@ -307,12 +343,17 @@ class _RegisterState extends State<Register> {
           ),
           Column(
             children: [
-              const Text('Already have an account?', style: TextStyle(fontFamily: "Cabin",)),
+              const Text('Already have an account?',
+                  style: TextStyle(
+                    fontFamily: "Cabin",
+                  )),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
-                    style: const ButtonStyle(backgroundColor: WidgetStatePropertyAll(Color.fromARGB(255, 217, 95, 89))),
+                    style: const ButtonStyle(
+                        backgroundColor: WidgetStatePropertyAll(
+                            Color.fromARGB(255, 217, 95, 89))),
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -321,7 +362,9 @@ class _RegisterState extends State<Register> {
                         ),
                       );
                     },
-                    child: const Text('LOG IN', style: TextStyle(fontFamily: "Cabin", color: Colors.white)),
+                    child: const Text('LOG IN',
+                        style: TextStyle(
+                            fontFamily: "Cabin", color: Colors.white)),
                   ),
                 ],
               ),
