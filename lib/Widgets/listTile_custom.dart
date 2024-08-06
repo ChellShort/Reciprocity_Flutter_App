@@ -31,6 +31,7 @@ class ListTileCustom extends StatefulWidget {
 
 class _ListTileCustomState extends State<ListTileCustom> {
   String textoamostrar = '';
+  bool isLoading = true;
 
   @override
   void initState() {
@@ -101,13 +102,34 @@ class _ListTileCustomState extends State<ListTileCustom> {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      color: Colors.white,
-                      child: Image.asset(
-                        widget.imageasset ??
-                            'assets/images/logoconleyenda.png',
-                        height: 220,
-                      ),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          color: Colors.white,
+                          child: Image.network(
+                            widget.imageasset ??
+                                'assets/images/logoconleyenda.png',
+                            height: 220,
+                            loadingBuilder: (BuildContext context, Widget child, ImageChunkEvent? loadingProgress) {
+                              if (loadingProgress == null) {
+                                return child;
+                              } else {
+                                return Center(
+                                  child: CircularProgressIndicator(
+                                    value: loadingProgress.expectedTotalBytes != null
+                                        ? loadingProgress.cumulativeBytesLoaded / (loadingProgress.expectedTotalBytes ?? 1)
+                                        : null,
+                                  ),
+                                );
+                              }
+                            },
+                            errorBuilder: (context, error, stackTrace) {
+                              return const Icon(Icons.error, color: Colors.red, size: 100);
+                            },
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],

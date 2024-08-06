@@ -589,7 +589,7 @@ final List<Map<String, dynamic>> generalenglish = [
     'numberOfQuestions': 10,
     'actualHighestScore': 0,
     'title': 'Key English Test',
-    'image': 'assets/images/logoconleyenda.png',
+    'image': 'https://drive.google.com/uc?export=view&id=1vrXxjyzVzzD6AzU1LssCOuvMegh3FZNd',
     'times_completed': 0,
   },
   {
@@ -597,7 +597,7 @@ final List<Map<String, dynamic>> generalenglish = [
     'numberOfQuestions': 10,
     'actualHighestScore': 0,
     'title': 'Preliminary English Test',
-    'image': 'assets/images/logoconleyenda.png',
+    'image': 'https://drive.google.com/uc?export=view&id=1rXRCDvitJRHQRPlgcUgE2KhBA5rtytui',
     'times_completed': 0,
   },
   {
@@ -605,7 +605,7 @@ final List<Map<String, dynamic>> generalenglish = [
     'numberOfQuestions': 10,
     'actualHighestScore': 0,
     'title': 'First Certificate English Test',
-    'image': 'assets/images/logoconleyenda.png',
+    'image': 'https://drive.google.com/uc?export=view&id=1cjCOBHU3iYzJ5Wn7j4npKGjR8d2wRsrI',
     'times_completed': 0,
   },
 ];
@@ -700,7 +700,7 @@ final List<Map<String, dynamic>> java = [
     'numberOfQuestions': 10,
     'actualHighestScore': 0,
     'title': 'Java Knowledge Exam',
-    'image': 'assets/images/logoconleyenda.png',
+    'image': 'https://drive.google.com/uc?export=view&id=1DneigCXqKAwFj4D3EPXqlEs8pDr9H37u',
     'times_completed': 0,
   },
 ];
@@ -860,7 +860,7 @@ final List<Map<String, dynamic>> oracledatabasesql = [
     'numberOfQuestions': 10,
     'actualHighestScore': 0,
     'title': 'Oracle Dtabase SQL exam',
-    'image': 'assets/images/logoconleyenda.png',
+    'image': 'https://drive.google.com/uc?export=view&id=1oPXx_zHBmgxM3JpE8k7nBbEk81n2_iSD',
     'times_completed': 0,
   }
 ];
@@ -1131,7 +1131,7 @@ final List<Map<String, dynamic>> networks = [
     'numberOfQuestions': 10,
     'actualHighestScore': 0,
     'title': 'Knowledge Networks',
-    'image': 'assets/images/logoconleyenda.png',
+    'image': 'https://drive.google.com/uc?export=view&id=10OvsWqqS8B5GTHjvFKl9Ut8RFASys-oA',
     'times_completed': 0,
   },
 ];
@@ -1364,7 +1364,7 @@ final List<Map<String, dynamic>> CiberSecurity = [
     'numberOfQuestions': 10,
     'actualHighestScore': 0,
     'title': 'Knowledge Ciber Security',
-    'image': 'assets/images/logoconleyenda.png',
+    'image': 'https://drive.google.com/uc?export=view&id=1zCBxuCffESDQOv0AN4I6kTKWWVFC95I8',
     'times_completed': 0,
   }
 ];
